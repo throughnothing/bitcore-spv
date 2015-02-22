@@ -1,0 +1,29 @@
+{
+  "name": "bitcore-spv",
+  "version": "0.0.1",
+  "description": "Javascript Bitcoin SPV node built on top of bitcore",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/throughnothing/bitcore-spv.git"
+  },
+  "keywords": [
+    "bitcoin",
+    "spv"
+  ],
+  "author": "William Wolf <throughnothing@gmail.com> (http://blog.throughnothing.com)",
+  "license": "Public domain",
+  "bugs": {
+    "url": "https://github.com/throughnothing/bitcore-spv/issues"
+  },
+  "homepage": "https://github.com/throughnothing/bitcore-spv",
+  "dependencies": {
+    "bitcore": "^0.10.4",
+    "bitcore-p2p": "git://github.com/throughnothing/bitcore-p2p.git#4cad909a1f8902e8708825e75d1b6a4fc2243dcf",
+    "bitcore-mnemonic": "^0.10.0",
+    "bloom-filter": "^0.1.1"
+  }
+}
