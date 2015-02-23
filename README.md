@@ -1,7 +1,7 @@
 # bitcore-spv
 
-[![Build Status](https://travis-ci.org/throughnothing/bitcore-spv.svg)](https://travis-ci.org/throughnothing/bitcore-spv)
-[![Coverage Status](https://coveralls.io/repos/throughnothing/bitcore-spv/badge.svg)](https://coveralls.io/r/throughnothing/bitcore-spv)
+[![Build Status](https://travis-ci.org/throughnothing/bitcore-spv.svg?branch=master)](https://travis-ci.org/throughnothing/bitcore-spv)
+[![Coverage Status](https://coveralls.io/repos/throughnothing/bitcore-spv/badge.svg?branch=master)](https://coveralls.io/r/throughnothing/bitcore-spv?branch=master)
 
 Bitcore-spv aims to be bitcoin SPV client (currently with a Wallet)
 written entirely in Javascript, and based on
