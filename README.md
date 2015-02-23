@@ -19,7 +19,14 @@ sockets implementation Firefox provides.
 ## Development requirements
 
   * Node.js + [npm](https://www.npmjs.org/).
+  * For running tests: `npm install -g jasmine-node`
   * `npm install`
+
+## Running Tests
+
+```
+npm run test
+```
 
 ## Running the sample script
 
