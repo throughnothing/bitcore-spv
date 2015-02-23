@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "chai": "^2.0.0",
+    "coveralls": "^2.11.2",
     "jasmine": "^2.2.1"
   }
 }
