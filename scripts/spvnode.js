@@ -14,7 +14,6 @@ pool.on('chain-progress', function(progress) {
 });
 pool.connect();
 
-pool.once('chain-full', finish);
 process.once('SIGINT', finish);
 
 var hasRun = 0;
