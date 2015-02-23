@@ -1,5 +1,6 @@
 'use strict';
 var path = require('path');
+var BloomFilter = require('bloom-filter');
 
 var spv = require('..');
 var Pool = spv.Pool;
@@ -9,10 +10,22 @@ var Wallet = spv.Wallet;
 var pool = new Pool({ relay: false });
 pool.on('chain-progress', function(progress) {
     var height = pool.chain.index.lastHeight;
-    console.log('syncProgress:', progress, 'height:', height,
+    var date = new Date();
+    console.log(date.toString(),
+      'syncProgress:', progress, 'height:', height,
       'estimatedHeight', pool.chain.estimatedBlockHeight());
 });
 pool.connect();
+
+pool.on('peer-merkleblock', function(peer, message) {
+    console.log(message.merkleBlock.toJSON());
+    console.log('isValid', message.merkleBlock.validMerkleTree());
+});
+
+pool.watch(
+  ['019f5b01d4195ecbc9398fbf3c3b1fa9bb3183301d7a1fb3bd174fcfa40a2b65'],
+  '000000000000b731f2eef9e8c63173adfb07e41bd53eb0ef0a6b720d6cb6dea4'
+);
 
 process.once('SIGINT', finish);
 
