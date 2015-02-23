@@ -4,7 +4,7 @@
   "description": "Javascript Bitcoin SPV node built on top of bitcore",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,9 @@
     "bitcore-p2p": "git://github.com/throughnothing/bitcore-p2p.git#4cad909a1f8902e8708825e75d1b6a4fc2243dcf",
     "bitcore-mnemonic": "^0.10.0",
     "bloom-filter": "^0.1.1"
+  },
+  "devDependencies": {
+    "chai": "^2.0.0",
+    "jasmine": "^2.2.1"
   }
 }
