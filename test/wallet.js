@@ -1,9 +1,9 @@
 'use strict';
-var Wallet = require('../').Wallet;
 var chai = require('chai');
 var expect = chai.expect;
 var should = chai.should();
 
+var Wallet = require('..').Wallet;
 
 describe('Wallet', function() {
 
@@ -21,10 +21,6 @@ describe('Wallet', function() {
       json.type.should.equal('wallet');
       expect(json.pub.should.be.a('string'));
       expect(json.priv.should.be.a('string'));
-    });
-
-    it('invalid JSON',function () {
-      // TODO
     });
   });
 
