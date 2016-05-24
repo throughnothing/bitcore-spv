@@ -22,9 +22,9 @@
   },
   "homepage": "https://github.com/throughnothing/bitcore-spv",
   "dependencies": {
-    "bitcore": "^0.10.4",
-    "bitcore-p2p": "git://github.com/throughnothing/bitcore-p2p.git#4cad909a1f8902e8708825e75d1b6a4fc2243dcf",
-    "bitcore-mnemonic": "^0.10.0",
+    "bitcore-lib": "^0.13.15",
+    "bitcore-mnemonic": "^1.1.1",
+    "bitcore-p2p": "throughnothing/bitcore-p2p",
     "bloom-filter": "^0.1.1"
   },
   "devDependencies": {
