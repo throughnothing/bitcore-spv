@@ -2,7 +2,7 @@
 var chai = require('chai');
 var expect = chai.expect;
 var should = chai.should();
-var BlockHeader = require('bitcore').BlockHeader;
+var BlockHeader = require('bitcore-lib').BlockHeader;
 
 var Chain = require('..').Chain;
 var constants = require('..').constants;
