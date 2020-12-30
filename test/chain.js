@@ -29,10 +29,10 @@ describe('Chain', function() {
     });
   });
 
-  describe('#fromJSON', function() {
+  describe('#fromObject', function() {
     it('valid JSON string non-prototype',function () {
       var json = JSON.stringify(shortChain);
-      var c = Chain.fromJSON(json);
+      var c = Chain.fromObject(JSON.parse(json));
       c.index.hashes.should.deep.equal(shortChain.hashes);
       c.index.ts.should.deep.equal(shortChain.ts);
       c.index.heights.should.deep.equal(shortChain.heights);
@@ -42,48 +42,48 @@ describe('Chain', function() {
     it('valid JSON string prototype',function () {
       var json = JSON.stringify(shortChain);
       var c = new Chain();
-      c.fromJSON(json);
+      c.fromObject(JSON.parse(json));
       c.index.hashes.should.deep.equal(shortChain.hashes);
       c.index.ts.should.deep.equal(shortChain.ts);
       c.index.heights.should.deep.equal(shortChain.heights);
       c.lastTsAtLoad.should.equal(shortChain.ts[shortChain.ts.length-1]);
     });
 
-    it('valid JSON object non-prototype',function () {
-      var c = Chain.fromJSON(shortChain);
+    it('valid object non-prototype',function () {
+      var c = Chain.fromObject(shortChain);
       c.index.hashes.should.deep.equal(shortChain.hashes);
       c.index.ts.should.deep.equal(shortChain.ts);
       c.index.heights.should.deep.equal(shortChain.heights);
       c.lastTsAtLoad.should.equal(shortChain.ts[shortChain.ts.length-1]);
     });
 
-    it('valid JSON object prototype',function () {
+    it('valid object prototype',function () {
       var c = new Chain()
-      c.fromJSON(shortChain);
+      c.fromObject(shortChain);
       c.index.hashes.should.deep.equal(shortChain.hashes);
       c.index.ts.should.deep.equal(shortChain.ts);
       c.index.heights.should.deep.equal(shortChain.heights);
       c.lastTsAtLoad.should.equal(shortChain.ts[shortChain.ts.length-1]);
     });
 
-    it('uses genesis block no valid empty JSON',function () {
-      var c = Chain.fromJSON({
+    it('uses genesis block no valid empty object',function () {
+      var c = Chain.fromObject({
         version: 1, type: 'chain', hashes: [], heights: [], ts: [] });
 
-      var genesisBlock = BlockHeader.fromJSON(constants.GENESIS_BLOCK);
+      var genesisBlock = BlockHeader.fromObject(constants.GENESIS_BLOCK);
       c.index.heights.should.deep.equal([0]);
       c.index.hashes.should.deep.equal([genesisBlock.id]);
       c.index.ts.should.deep.equal([genesisBlock.time]);
       c.lastTsAtLoad.should.equal(genesisBlock.time);
     });
 
-    it('invalid JSON',function () {
+    it('invalid object',function () {
       shortChain.version = 2;
-      expect(function(){ Chain.fromJSON(shortChain); })
+      expect(function(){ Chain.fromObject(shortChain); })
         .to.throw(/2 == 1/);
       shortChain.version = 1;
       shortChain.type = 'wallet';
-      expect(function(){ Chain.fromJSON(shortChain); })
+      expect(function(){ Chain.fromObject(shortChain); })
         .to.throw(/wallet/);
       shortChain.type = 'chain';
     });

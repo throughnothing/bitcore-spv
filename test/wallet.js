@@ -24,14 +24,8 @@ describe('Wallet', function() {
     });
   });
 
-  describe('#fromJSON', function() {
-    it('valid JSON',function () {
-      // TODO
-    });
-
-    it('invalid JSON',function () {
-      // TODO
-    });
+  describe('#fromObject', function() {
+    // TODO
   });
 
 });
